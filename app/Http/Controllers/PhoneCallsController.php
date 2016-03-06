@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\PhoneCall;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -21,7 +22,8 @@ class PhoneCallsController extends Controller
 
     public function index()
     {
-        return view('phonecalls.index');
+        $phoneCalls = PhoneCall::all();
+        return view('phonecalls.index', compact('phoneCalls'));
     }
 
     public function create()
