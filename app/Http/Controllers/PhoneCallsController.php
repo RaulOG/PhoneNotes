@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\PhoneCallRequest;
 use App\PhoneCall;
 use Illuminate\Http\Request;
 
@@ -22,7 +23,7 @@ class PhoneCallsController extends Controller
 
     public function index()
     {
-        $phoneCalls = PhoneCall::all();
+        $phoneCalls = PhoneCall::orderBy('created_at', 'desc')->get();
         return view('phonecalls.index', compact('phoneCalls'));
     }
 
@@ -43,16 +44,27 @@ class PhoneCallsController extends Controller
 
     public function edit($id)
     {
-
+        $phoneCall = PhoneCall::find($id);
+        return view('phonecalls.edit', compact('phoneCall'));
     }
 
-    public function update(Request $request, $id)
+    public function update(PhoneCallRequest $request, $id)
     {
+        $phoneCall = PhoneCall::find($id);
 
+        $phoneCall->name = $request->input('name');
+        $phoneCall->phone_number = $request->input('phone_number');
+        $phoneCall->notes = $request->input('notes');
+        $phoneCall->save();
+
+        return redirect()->route('phone_calls.index');
     }
 
     public function destroy(Request $request, $id)
     {
+        $phoneCall = PhoneCall::find($id);
+        $phoneCall->delete();
 
+        return redirect()->route('phone_calls.index');
     }
 }
