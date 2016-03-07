@@ -11,6 +11,6 @@ class PhoneCallNote extends Model
      */
     public function phone_call()
     {
-        return $this->belongsTo(PhoneCall::class);
+        return $this->belongsTo('PhoneCall');
     }
 }
