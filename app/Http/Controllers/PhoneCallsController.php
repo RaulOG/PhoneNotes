@@ -29,12 +29,17 @@ class PhoneCallsController extends Controller
 
     public function create()
     {
-
+        return view('phonecalls.create');
     }
 
     public function store(Request $request)
     {
-
+        $phoneCall = new PhoneCall;
+        $phoneCall->name = $request->name;
+        $phoneCall->phone_number = $request->phone_number;
+        $phoneCall->notes = $request->notes;
+        $phoneCall->save();
+        return redirect()->route('phone_calls.index');
     }
 
     public function show($id)
