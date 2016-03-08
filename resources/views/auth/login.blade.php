@@ -2,6 +2,8 @@
 
 @section('title', 'Login')
 
+@section('body-background-img', URL::asset('img/home.png'))
+
 @section('content')
 <div class="container">
     <div class="row">

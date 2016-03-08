@@ -2,10 +2,12 @@
 
 @section('title', 'Overview')
 
+@section('body-background-img', URL::asset('img/edit.png'))
+
 @section('content')
 
     <div class="panel panel-default">
-        <div class="panel-heading">Edit phone call - {{ $phoneCall->id }}</div>
+        <div class="panel-heading">Edit {{ $phoneCall->name }} phone call note</div>
         <div class="panel-body">
             @if($errors->any())
                 <ul class="list-group alert-danger">

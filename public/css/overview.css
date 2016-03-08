@@ -2,6 +2,39 @@ div#no-more-tables>table>tbody>tr>td:nth-child(5), div#no-more-tables>table>tbod
     text-align:center;
 }
 
+.table-striped > thead {
+    background-color: white;
+}
+
+.table-striped > tbody > tr:nth-of-type(2n){
+    background-color: white;
+}
+
+#overview-title {
+    color: white;
+}
+
+#phoneCallActions {
+    padding-bottom:50px;
+    color: white;
+}
+
+#phoneCallActions a {
+    color: white;
+}
+
+#phoneCallActions a:hover {
+    color: green;
+}
+
+#phoneCallActions div {
+    text-align:center;
+}
+
+#phoneCallActions i {
+    font-size:40px;
+}
+
 @media only screen and (max-width: 800px) {
 
     /* Force table to not be like tables anymore */
@@ -11,7 +44,7 @@ div#no-more-tables>table>tbody>tr>td:nth-child(5), div#no-more-tables>table>tbod
     #no-more-tables th,
     #no-more-tables td,
     #no-more-tables tr {
-        display: block;
+        display: inline-block;
     }
 
     /* Hide table headers (but not display: none;, for accessibility) */

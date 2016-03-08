@@ -2,6 +2,8 @@
 
 @section('title', 'Create phone call note')
 
+@section('body-background-img', URL::asset('img/edit.png'))
+
 @section('content')
 
     <div class="panel panel-default">

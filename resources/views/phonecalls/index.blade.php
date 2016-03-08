@@ -6,12 +6,30 @@
     {{ Html::style('css/overview.css') }}
 @endsection
 
+@section('body-background-img', URL::asset('img/overview.png'))
+
 @section('content')
     <div class="row">
-        <div class="col-md-12">
+        <div id="overview-title" class="col-md-12">
             <h1 class="text-center">
                 Phone calls
             </h1>
+        </div>
+
+        <!-- Phone call header actions -->
+        <div id="phoneCallActions">
+            <div class="col-xs-4">
+                <a href="{{ URL::route('dpdf') }}"><i class="fa fa-file-pdf-o"></i></a>
+                <p>Download overview pdf</p>
+            </div>
+            <div class="col-xs-4">
+                <a href="{{ URL::route('dpdf') }}"><i class="fa fa-envelope"></i></a>
+                <p>Attach pdf into email</p>
+            </div>
+                <div class="col-xs-4">
+                <a href="{{ URL::route('phone_calls.create') }}"><i class="fa fa-sticky-note-o"></i></a>
+                <p>Create new phone call note</p>
+            </div>
         </div>
 
         <!-- Table -->
