@@ -26,6 +26,7 @@
 Route::group(['middleware' => 'web'], function () {
 
     Route::get('/', 'HomeController@index');
+    Route::get('/download-pdf', 'pdf@index')->name('dpdf');
 
     Route::resource('phone_calls', 'PhoneCallsController');
     Route::resource('phone_call_notes', 'PhoneCallNotesController');
